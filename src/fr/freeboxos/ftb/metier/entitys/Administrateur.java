@@ -1,6 +1,8 @@
 package fr.freeboxos.ftb.metier.entitys;
 
 import java.io.Serializable;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
@@ -34,32 +36,31 @@ public class Administrateur implements Serializable {
         this.mdp = mdp;
     }
 
-    private String codeMD5(String msg) throws NoSuchAlgorithmException {
-        String code = "";
-        byte[] b;
-        MessageDigest md;
-        try {
-            md = MessageDigest.getInstance("MD5");
-            b = md.digest(msg.getBytes());
-            for (int i = 0; i < b.length; i++) {
-                int x = b[i];
-
-                if (x < 0) {
-                    x += 256;
-                }
-
-                String s = String.format("%02x", x);
-                code += s;
-            }
-        } catch (NoSuchAlgorithmException ex) {
-            System.out.println(ex.getMessage());
-        }
-
-        return code;
-    }
-
+//    private String codeMD5(String msg) throws NoSuchAlgorithmException {
+//        String code = "";
+//        byte[] b;
+//        MessageDigest md;
+//        try {
+//            md = MessageDigest.getInstance("MD5");
+//            b = md.digest(msg.getBytes());
+//            for (int i = 0; i < b.length; i++) {
+//                int x = b[i];
+//
+//                if (x < 0) {
+//                    x += 256;
+//                }
+//
+//                String s = String.format("%02x", x);
+//                code += s;
+//            }
+//        } catch (NoSuchAlgorithmException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+//
+//        return code;
+//    }
     public boolean isValid(String mdp) throws NoSuchAlgorithmException {
-        return this.mdp.equals(this.codeMD5(mdp));
+        return this.mdp.equals(toHexString(mdp.getBytes()));
     }
 
     /**
@@ -88,7 +89,7 @@ public class Administrateur implements Serializable {
      * @throws java.security.NoSuchAlgorithmException
      */
     public void setMdp(String mdp) throws NoSuchAlgorithmException {
-        this.mdp = this.codeMD5(mdp);
+        this.mdp = toHexString(mdp.getBytes());
     }
 
     public void setEncodedMdp(String mdp) throws NoSuchAlgorithmException {
@@ -105,5 +106,40 @@ public class Administrateur implements Serializable {
         int hash = 7;
         hash = 41 * hash + Objects.hashCode(this.login);
         return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Administrateur other = (Administrateur) obj;
+        if (!Objects.equals(this.login, other.login)) {
+            return false;
+        }
+        return true;
+    }
+
+    public static byte[] getSHA(String input) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+
+        return md.digest(input.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public static String toHexString(byte[] hash) {
+        BigInteger number = new BigInteger(1, hash);
+
+        StringBuilder hexString = new StringBuilder(number.toString(16));
+
+        while (hexString.length() < 32) {
+            hexString.insert(0, '0');
+        }
+        return hexString.toString();
     }
 }
