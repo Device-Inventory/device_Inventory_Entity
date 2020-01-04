@@ -107,7 +107,7 @@ public class SSD extends HDD {
 
     @Override
     public String toString() {
-        return "SSD{" + "type_memoire=" + type_memoire + ", nvme=" + nvme + ", controleur=" + controleur + ", lecture=" + lecture + ", ecriture=" + ecriture + ", iops=" + iops + ", trim=" + trim + '}';
+        return super.getId() + " " + super.getMarque() + " " + super.getModele();
     }
 
 }
