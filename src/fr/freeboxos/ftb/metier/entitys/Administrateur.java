@@ -36,29 +36,6 @@ public class Administrateur implements Serializable {
         this.mdp = mdp;
     }
 
-//    private String codeMD5(String msg) throws NoSuchAlgorithmException {
-//        String code = "";
-//        byte[] b;
-//        MessageDigest md;
-//        try {
-//            md = MessageDigest.getInstance("MD5");
-//            b = md.digest(msg.getBytes());
-//            for (int i = 0; i < b.length; i++) {
-//                int x = b[i];
-//
-//                if (x < 0) {
-//                    x += 256;
-//                }
-//
-//                String s = String.format("%02x", x);
-//                code += s;
-//            }
-//        } catch (NoSuchAlgorithmException ex) {
-//            System.out.println(ex.getMessage());
-//        }
-//
-//        return code;
-//    }
     public boolean isValid(String mdp) throws NoSuchAlgorithmException {
         return this.mdp.equals(toHexString(mdp.getBytes()));
     }

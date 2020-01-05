@@ -34,21 +34,36 @@ public class Ordinateur implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private boolean portable;
+    //todo : marque
+    //todo : modele
+    //todo : oem
+    //todo : os
     @OneToOne
     private Processeur processeur;
     @OneToOne
     private Memoire memoire;
     @OneToOne
     private HDD hdd;
+    //todo : ajouter l'attribut carte mere
+    //todo : ajouter l'attribut gpu
 
     public Ordinateur() {
     }
 
-    public Ordinateur(Processeur processeur, Memoire memoire, HDD hdd) {
+    public Ordinateur(boolean portable, Processeur processeur, Memoire memoire, HDD hdd) {
+        this.portable = portable;
         this.processeur = processeur;
         this.memoire = memoire;
         this.hdd = hdd;
+    }
+
+    public boolean isPortable() {
+        return portable;
+    }
+
+    public void setPortable(boolean portable) {
+        this.portable = portable;
     }
 
     public Long getId() {
