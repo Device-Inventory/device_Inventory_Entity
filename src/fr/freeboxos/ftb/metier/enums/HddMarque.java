@@ -9,6 +9,6 @@ package fr.freeboxos.ftb.metier.enums;
  *
  * @author alan
  */
-public enum hddMarque {
+public enum HddMarque {
     Samsung, Western_Digital, Toshiba, Hitachi, HP, LDLC, Seagate;
 }

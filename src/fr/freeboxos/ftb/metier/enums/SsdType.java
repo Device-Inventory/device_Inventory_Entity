@@ -9,6 +9,6 @@ package fr.freeboxos.ftb.metier.enums;
  *
  * @author alan
  */
-public enum cableType {
-    Audio, Vidéo, Adaptateur_RCA_Cinch, Audio_et_Vidéo, Audio_mic, Alimentation_DS, Alimentation_USB, Adaptateur, Cable_USB;
+public enum SsdType {
+    MLC, QLC, TLC;
 }

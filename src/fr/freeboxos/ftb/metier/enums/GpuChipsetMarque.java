@@ -20,6 +20,6 @@ package fr.freeboxos.ftb.metier.enums;
  *
  * @author alan
  */
-public enum carteMereMarque {
-//todo : mettre les marques
+public enum GpuChipsetMarque {
+    AMD, NVidia;
 }

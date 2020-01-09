@@ -20,12 +20,12 @@ package fr.freeboxos.ftb.metier.enums;
  *
  * @author alan
  */
-public enum gpuMarque {
+public enum GpuMarque {
     ASRock("ASRock"), ASUS("ASUS"), EVGA("EVGA"), Gainward("Gainward"), Gigabyte("Gigabyte"), Générique("Générique"), Inno_3D("Inno 3D"), MSI("MSI"), SAPPHIRE("SAPPHIRE"), ZOTAC("ZOTAC");
 
     private String marque;
 
-    private gpuMarque(String marque) {
+    private GpuMarque(String marque) {
         this.marque = marque;
     }
 

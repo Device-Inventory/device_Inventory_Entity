@@ -9,6 +9,6 @@ package fr.freeboxos.ftb.metier.enums;
  *
  * @author alan
  */
-public enum ramMarque {
+public enum RamMarque {
     Ramaxel, Hynix, Kingston, Samsung, Micron, Nec, Hyundai, Nanya;
 }

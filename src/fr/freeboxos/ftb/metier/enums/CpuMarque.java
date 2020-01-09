@@ -9,6 +9,6 @@ package fr.freeboxos.ftb.metier.enums;
  *
  * @author alan
  */
-public enum cpuMarque {
+public enum CpuMarque {
     Intel, AMD;
 }
