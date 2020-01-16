@@ -42,11 +42,11 @@ public class CarteGraphique implements Serializable {
     private int nombreGpu;
     private String bus;
     private int tailleMemoire;
-    private String uniteMemoire; //todo: ajouter Ko, Mo, Go dans le jtable
-    private int interfaceMemoire; //todo: rajouter "bit(s)" dans le jtable
+    private String uniteMemoire; //Ko, Mo, Go dans le jtable
+    private int interfaceMemoire; //rajouter "bit(s)" dans le jtable
     private String typeMemoire;
     private String connecteurAlimentation;
-    private int consommation; //todo: rajouter "W" dans le jtable
+    private int consommation; //rajouter "W" dans le jtable
     private float prix;
 
     public CarteGraphique() {
