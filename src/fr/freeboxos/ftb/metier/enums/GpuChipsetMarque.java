@@ -21,5 +21,16 @@ package fr.freeboxos.ftb.metier.enums;
  * @author alan
  */
 public enum GpuChipsetMarque {
-    AMD, NVidia;
+    AMD("AMD"), NVidia("Nvidia");
+
+    private String marque;
+
+    public String getMarque() {
+        return marque;
+    }
+
+    private GpuChipsetMarque(String marque) {
+        this.marque = marque;
+    }
+
 }

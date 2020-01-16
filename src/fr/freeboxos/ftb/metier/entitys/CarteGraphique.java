@@ -19,6 +19,8 @@ package fr.freeboxos.ftb.metier.entitys;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -29,6 +31,7 @@ import javax.persistence.Id;
 public class CarteGraphique implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String marque;
     private String modele;
@@ -44,11 +47,12 @@ public class CarteGraphique implements Serializable {
     private String typeMemoire;
     private String connecteurAlimentation;
     private int consommation; //todo: rajouter "W" dans le jtable
+    private float prix;
 
     public CarteGraphique() {
     }
 
-    public CarteGraphique(String marque, String modele, String chipsetGraphique, String marqueChipset, int frequence, boolean overclockee, int nombreGpu, String bus, int tailleMemoire, String uniteMemoire, int interfaceMemoire, String typeMemoire, String connecteurAlimentation, int consommation) {
+    public CarteGraphique(String marque, String modele, String chipsetGraphique, String marqueChipset, int frequence, boolean overclockee, int nombreGpu, String bus, int tailleMemoire, String uniteMemoire, int interfaceMemoire, String typeMemoire, String connecteurAlimentation, int consommation, float prix) {
         this.marque = marque;
         this.modele = modele;
         this.chipsetGraphique = chipsetGraphique;
@@ -63,6 +67,7 @@ public class CarteGraphique implements Serializable {
         this.typeMemoire = typeMemoire;
         this.connecteurAlimentation = connecteurAlimentation;
         this.consommation = consommation;
+        this.prix = prix;
     }
 
     public long getId() {
@@ -185,6 +190,14 @@ public class CarteGraphique implements Serializable {
         this.consommation = consommation;
     }
 
+    public float getPrix() {
+        return prix;
+    }
+
+    public void setPrix(float prix) {
+        this.prix = prix;
+    }
+
     @Override
     public int hashCode() {
         int hash = 3;
@@ -268,7 +281,7 @@ public class CarteGraphique implements Serializable {
 
     @Override
     public String toString() {
-        return "CarteGraphique{" + "id=" + id + ", marque=" + marque + ", modele=" + modele + '}';
+        return id + " " + marque + " " + modele;
     }
 
 }
