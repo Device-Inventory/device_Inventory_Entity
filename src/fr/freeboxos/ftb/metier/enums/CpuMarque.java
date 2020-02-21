@@ -10,5 +10,16 @@ package fr.freeboxos.ftb.metier.enums;
  * @author alan
  */
 public enum CpuMarque {
-    Intel, AMD;
+    Intel("Intel"), AMD("AMD");
+
+    private String marque;
+
+    public String getMarque() {
+        return marque;
+    }
+
+    private CpuMarque(String marque) {
+        this.marque = marque;
+    }
+
 }

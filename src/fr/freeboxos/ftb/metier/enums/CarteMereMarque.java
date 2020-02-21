@@ -21,5 +21,16 @@ package fr.freeboxos.ftb.metier.enums;
  * @author alan
  */
 public enum CarteMereMarque {
-//todo : mettre les marques
+    asrock("ASRock"), asus("ASUS"), gigabyte("Gigabyte"), msi("MSI"), supermicro("SuperMicro");
+
+    private String marque;
+
+    public String getMarque() {
+        return marque;
+    }
+
+    private CarteMereMarque(String marque) {
+        this.marque = marque;
+    }
+
 }
