@@ -37,13 +37,11 @@ public class CarteMere implements Serializable {
     private String marque; //todo : enum marque carte mère
     private String modele;
     private String designation; //todo : marque + modele;
-    private Float prix;
+
     private String supportDuProcesseur; //todo : enum support du processeur
     private Integer nombreDeCpu; // todo : nombre de cpu pouvant etre brancher sur la carte mère
     private String formatDeCarteMere; //todo : enum format de carte mère
     private String chipset; //todo : enum chipset
-
-    private Boolean led;
 
     private String frequenceMemoire; //todo : enum frequence memoire et faire un check list box dans ui
     private String technologieMemoire; //todo : enum technologieMemoire
@@ -78,6 +76,10 @@ public class CarteMere implements Serializable {
     private Boolean raid;
     private String connecteurDisque; //todo : remplir enum connecteur disque carte mère
     private Integer modeRaid;
+
+    private Boolean led;
+
+    private Float prix;
 
     public CarteMere() {
     }
