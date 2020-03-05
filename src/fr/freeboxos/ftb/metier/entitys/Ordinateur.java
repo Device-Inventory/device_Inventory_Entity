@@ -47,6 +47,7 @@ public class Ordinateur implements Serializable {
     private HDD hdd;
     //todo : ajouter l'attribut carte mere
     //todo : ajouter l'attribut gpu
+    //todo : ajouter l'attribut prix en float
 
     public Ordinateur() {
     }

@@ -37,7 +37,7 @@ public class HDD implements Serializable {
     private String capacite;
     private String vitesse_de_rotation;
     private String cache;
-    private String prix;
+    private String prix; //todo : modifier le type d'attribut
 
     public HDD() {
     }

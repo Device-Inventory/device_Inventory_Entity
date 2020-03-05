@@ -31,7 +31,7 @@ public class Memoire implements Serializable {
     private String ECC;
     private String radiateur;
     private String tension;
-    private String prix;
+    private String prix; //todo : modifier le type d'attribut
 
     public Memoire() {
     }

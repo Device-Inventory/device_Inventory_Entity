@@ -35,7 +35,7 @@ public class Processeur implements Serializable {
     private String L1;
     private String L2;
     private String L3;
-    private String prix;
+    private String prix; //todo : modifier le type d'attribut
 
     public Processeur() {
     }
