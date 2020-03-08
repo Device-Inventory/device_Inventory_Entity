@@ -17,6 +17,7 @@
 package fr.freeboxos.ftb.metier.entitys;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,67 +35,66 @@ public class CarteMere implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String marque; //todo : enum marque carte mère
+    //private String marque; //todo : enum marque carte mère
+    private List<String> marque;
     private String modele;
     private String designation; //todo : marque + modele;
 
     private String supportDuProcesseur; //todo : enum support du processeur
-    private Integer nombreDeCpu; // todo : nombre de cpu pouvant etre brancher sur la carte mère
+    private int nombreDeCpu; // todo : nombre de cpu pouvant etre brancher sur la carte mère
     private String formatDeCarteMere; //todo : enum format de carte mère
     private String chipset; //todo : enum chipset
 
     private String frequenceMemoire; //todo : enum frequence memoire et faire un check list box dans ui
     private String technologieMemoire; //todo : enum technologieMemoire
-    private Integer capaciteMaximaleRamSlot; //todo : Capacité maximale de RAM par slot
-    private Integer capaciteMaximaleRam; //todo : Capacité maximale de RAM
+    private int capaciteMaximaleRamSlot; //todo : Capacité maximale de RAM par slot
+    private int capaciteMaximaleRam; //todo : Capacité maximale de RAM
     private String typeDeMemoire; //todo : enum type de memoire
 
-    private Boolean controleurGraphiqueIntegre;
-    private Boolean gpuInCpu; // todo : Compatible coeur graphique intégré au CPU
+    private boolean controleurGraphiqueIntegre;
+    private boolean gpuInCpu; // todo : Compatible coeur graphique intégré au CPU
     private String chipsetGraphique;
-    private Integer tailleMemoireVideo;
+    private int tailleMemoireVideo;
     private String typeMultiGpu; //todo : enum type multi gpu
     private String connecteurGraphique; //todo : enum connecteur graphique
 
-    private Boolean pci;
-    private Boolean pciExpress1x20; //todo : pci express 2.0
-    private Boolean pciExpress16x20;
-    private Boolean pciExpress1x30;
-    private Boolean pciExpress16x30;
-    private Integer pciNum;
-    private Integer pciExpress1x20Num;
-    private Integer pciExpress16x20Num;
-    private Integer pciExpress1x30Num;
-    private Integer pciExpress16x30Num;
+    private boolean pci;
+    private boolean pciExpress1x20; //todo : pci express 2.0
+    private boolean pciExpress16x20;
+    private boolean pciExpress1x30;
+    private boolean pciExpress16x30;
+    private int pciNum;
+    private int pciExpress1x20Num;
+    private int pciExpress16x20Num;
+    private int pciExpress1x30Num;
+    private int pciExpress16x30Num;
 
     private String chipsetAudio;
-    private Integer nombreCanauxAudio;
+    private int nombreCanauxAudio;
 
     private String controleurEthernet;
     private String normeReseau; //todo : remplir enum norme reseaux;
 
-    private Boolean raid;
+    private boolean raid;
     private String connecteurDisque; //todo : remplir enum connecteur disque carte mère
-    private Integer modeRaid;
+    private int modeRaid;
 
-    private Boolean led;
+    private boolean led;
 
-    private Float prix;
+    private float prix;
 
     public CarteMere() {
     }
 
     //todo : finir les attribut
-    public CarteMere(String marque, String modele, String designation, Float prix, String supportDuProcesseur, Integer nombreDeCpu, String formatDeCarteMere, String chipset, Boolean led, String frequenceMemoire, String technologieMemoire, Integer capaciteMaximaleRamSlot, Integer capaciteMaximaleRam, String typeDeMemoire, Boolean controleurGraphiqueIntegre, Boolean gpuInCpu, String chipsetGraphique, Integer tailleMemoireVideo, String typeMultiGpu, String connecteurGraphique, Boolean pci, Boolean pciExpress1x20, Boolean pciExpress16x20, Boolean pciExpress1x30, Boolean pciExpress16x30, Integer pciNum, Integer pciExpress1x20Num, Integer pciExpress16x20Num, Integer pciExpress1x30Num, Integer pciExpress16x30Num, String chipsetAudio, Integer nombreCanauxAudio, String controleurEthernet, String normeReseau, Boolean raid, String connecteurDisque, Integer modeRaid) {
+    public CarteMere(List<String> marque, String modele, String designation, String supportDuProcesseur, int nombreDeCpu, String formatDeCarteMere, String chipset, String frequenceMemoire, String technologieMemoire, int capaciteMaximaleRamSlot, int capaciteMaximaleRam, String typeDeMemoire, boolean controleurGraphiqueIntegre, boolean gpuInCpu, String chipsetGraphique, int tailleMemoireVideo, String typeMultiGpu, String connecteurGraphique, boolean pci, boolean pciExpress1x20, boolean pciExpress16x20, boolean pciExpress1x30, boolean pciExpress16x30, int pciNum, int pciExpress1x20Num, int pciExpress16x20Num, int pciExpress1x30Num, int pciExpress16x30Num, String chipsetAudio, int nombreCanauxAudio, String controleurEthernet, String normeReseau, boolean raid, String connecteurDisque, int modeRaid, boolean led, float prix) {
         this.marque = marque;
         this.modele = modele;
         this.designation = designation;
-        this.prix = prix;
         this.supportDuProcesseur = supportDuProcesseur;
         this.nombreDeCpu = nombreDeCpu;
         this.formatDeCarteMere = formatDeCarteMere;
         this.chipset = chipset;
-        this.led = led;
         this.frequenceMemoire = frequenceMemoire;
         this.technologieMemoire = technologieMemoire;
         this.capaciteMaximaleRamSlot = capaciteMaximaleRamSlot;
@@ -123,13 +123,15 @@ public class CarteMere implements Serializable {
         this.raid = raid;
         this.connecteurDisque = connecteurDisque;
         this.modeRaid = modeRaid;
+        this.led = led;
+        this.prix = prix;
     }
 
-    public String getMarque() {
+    public List<String> getMarque() {
         return marque;
     }
 
-    public void setMarque(String marque) {
+    public void setMarque(List<String> marque) {
         this.marque = marque;
     }
 
@@ -149,11 +151,11 @@ public class CarteMere implements Serializable {
         this.designation = designation;
     }
 
-    public Float getPrix() {
+    public float getPrix() {
         return prix;
     }
 
-    public void setPrix(Float prix) {
+    public void setPrix(float prix) {
         this.prix = prix;
     }
 
@@ -165,11 +167,11 @@ public class CarteMere implements Serializable {
         this.supportDuProcesseur = supportDuProcesseur;
     }
 
-    public Integer getNombreDeCpu() {
+    public int getNombreDeCpu() {
         return nombreDeCpu;
     }
 
-    public void setNombreDeCpu(Integer nombreDeCpu) {
+    public void setNombreDeCpu(int nombreDeCpu) {
         this.nombreDeCpu = nombreDeCpu;
     }
 
@@ -189,11 +191,11 @@ public class CarteMere implements Serializable {
         this.chipset = chipset;
     }
 
-    public Boolean getLed() {
+    public boolean getLed() {
         return led;
     }
 
-    public void setLed(Boolean led) {
+    public void setLed(boolean led) {
         this.led = led;
     }
 
@@ -213,19 +215,19 @@ public class CarteMere implements Serializable {
         this.technologieMemoire = technologieMemoire;
     }
 
-    public Integer getCapaciteMaximaleRamSlot() {
+    public int getCapaciteMaximaleRamSlot() {
         return capaciteMaximaleRamSlot;
     }
 
-    public void setCapaciteMaximaleRamSlot(Integer capaciteMaximaleRamSlot) {
+    public void setCapaciteMaximaleRamSlot(int capaciteMaximaleRamSlot) {
         this.capaciteMaximaleRamSlot = capaciteMaximaleRamSlot;
     }
 
-    public Integer getCapaciteMaximaleRam() {
+    public int getCapaciteMaximaleRam() {
         return capaciteMaximaleRam;
     }
 
-    public void setCapaciteMaximaleRam(Integer capaciteMaximaleRam) {
+    public void setCapaciteMaximaleRam(int capaciteMaximaleRam) {
         this.capaciteMaximaleRam = capaciteMaximaleRam;
     }
 
@@ -237,19 +239,19 @@ public class CarteMere implements Serializable {
         this.typeDeMemoire = typeDeMemoire;
     }
 
-    public Boolean getControleurGraphiqueIntegre() {
+    public boolean getControleurGraphiqueIntegre() {
         return controleurGraphiqueIntegre;
     }
 
-    public void setControleurGraphiqueIntegre(Boolean controleurGraphiqueIntegre) {
+    public void setControleurGraphiqueIntegre(boolean controleurGraphiqueIntegre) {
         this.controleurGraphiqueIntegre = controleurGraphiqueIntegre;
     }
 
-    public Boolean getGpuInCpu() {
+    public boolean getGpuInCpu() {
         return gpuInCpu;
     }
 
-    public void setGpuInCpu(Boolean gpuInCpu) {
+    public void setGpuInCpu(boolean gpuInCpu) {
         this.gpuInCpu = gpuInCpu;
     }
 
@@ -261,11 +263,11 @@ public class CarteMere implements Serializable {
         this.chipsetGraphique = chipsetGraphique;
     }
 
-    public Integer getTailleMemoireVideo() {
+    public int getTailleMemoireVideo() {
         return tailleMemoireVideo;
     }
 
-    public void setTailleMemoireVideo(Integer tailleMemoireVideo) {
+    public void setTailleMemoireVideo(int tailleMemoireVideo) {
         this.tailleMemoireVideo = tailleMemoireVideo;
     }
 
@@ -285,83 +287,83 @@ public class CarteMere implements Serializable {
         this.connecteurGraphique = connecteurGraphique;
     }
 
-    public Boolean getPci() {
+    public boolean getPci() {
         return pci;
     }
 
-    public void setPci(Boolean pci) {
+    public void setPci(boolean pci) {
         this.pci = pci;
     }
 
-    public Boolean getPciExpress1x20() {
+    public boolean getPciExpress1x20() {
         return pciExpress1x20;
     }
 
-    public void setPciExpress1x20(Boolean pciExpress1x20) {
+    public void setPciExpress1x20(boolean pciExpress1x20) {
         this.pciExpress1x20 = pciExpress1x20;
     }
 
-    public Boolean getPciExpress16x20() {
+    public boolean getPciExpress16x20() {
         return pciExpress16x20;
     }
 
-    public void setPciExpress16x20(Boolean pciExpress16x20) {
+    public void setPciExpress16x20(boolean pciExpress16x20) {
         this.pciExpress16x20 = pciExpress16x20;
     }
 
-    public Boolean getPciExpress1x30() {
+    public boolean getPciExpress1x30() {
         return pciExpress1x30;
     }
 
-    public void setPciExpress1x30(Boolean pciExpress1x30) {
+    public void setPciExpress1x30(boolean pciExpress1x30) {
         this.pciExpress1x30 = pciExpress1x30;
     }
 
-    public Boolean getPciExpress16x30() {
+    public boolean getPciExpress16x30() {
         return pciExpress16x30;
     }
 
-    public void setPciExpress16x30(Boolean pciExpress16x30) {
+    public void setPciExpress16x30(boolean pciExpress16x30) {
         this.pciExpress16x30 = pciExpress16x30;
     }
 
-    public Integer getPciNum() {
+    public int getPciNum() {
         return pciNum;
     }
 
-    public void setPciNum(Integer pciNum) {
+    public void setPciNum(int pciNum) {
         this.pciNum = pciNum;
     }
 
-    public Integer getPciExpress1x20Num() {
+    public int getPciExpress1x20Num() {
         return pciExpress1x20Num;
     }
 
-    public void setPciExpress1x20Num(Integer pciExpress1x20Num) {
+    public void setPciExpress1x20Num(int pciExpress1x20Num) {
         this.pciExpress1x20Num = pciExpress1x20Num;
     }
 
-    public Integer getPciExpress16x20Num() {
+    public int getPciExpress16x20Num() {
         return pciExpress16x20Num;
     }
 
-    public void setPciExpress16x20Num(Integer pciExpress16x20Num) {
+    public void setPciExpress16x20Num(int pciExpress16x20Num) {
         this.pciExpress16x20Num = pciExpress16x20Num;
     }
 
-    public Integer getPciExpress1x30Num() {
+    public int getPciExpress1x30Num() {
         return pciExpress1x30Num;
     }
 
-    public void setPciExpress1x30Num(Integer pciExpress1x30Num) {
+    public void setPciExpress1x30Num(int pciExpress1x30Num) {
         this.pciExpress1x30Num = pciExpress1x30Num;
     }
 
-    public Integer getPciExpress16x30Num() {
+    public int getPciExpress16x30Num() {
         return pciExpress16x30Num;
     }
 
-    public void setPciExpress16x30Num(Integer pciExpress16x30Num) {
+    public void setPciExpress16x30Num(int pciExpress16x30Num) {
         this.pciExpress16x30Num = pciExpress16x30Num;
     }
 
@@ -373,11 +375,11 @@ public class CarteMere implements Serializable {
         this.chipsetAudio = chipsetAudio;
     }
 
-    public Integer getNombreCanauxAudio() {
+    public int getNombreCanauxAudio() {
         return nombreCanauxAudio;
     }
 
-    public void setNombreCanauxAudio(Integer nombreCanauxAudio) {
+    public void setNombreCanauxAudio(int nombreCanauxAudio) {
         this.nombreCanauxAudio = nombreCanauxAudio;
     }
 
@@ -397,11 +399,11 @@ public class CarteMere implements Serializable {
         this.normeReseau = normeReseau;
     }
 
-    public Boolean getRaid() {
+    public boolean getRaid() {
         return raid;
     }
 
-    public void setRaid(Boolean raid) {
+    public void setRaid(boolean raid) {
         this.raid = raid;
     }
 
@@ -413,11 +415,11 @@ public class CarteMere implements Serializable {
         this.connecteurDisque = connecteurDisque;
     }
 
-    public Integer getModeRaid() {
+    public int getModeRaid() {
         return modeRaid;
     }
 
-    public void setModeRaid(Integer modeRaid) {
+    public void setModeRaid(int modeRaid) {
         this.modeRaid = modeRaid;
     }
 
