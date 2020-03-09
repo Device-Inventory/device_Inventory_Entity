@@ -30,35 +30,43 @@ import javax.persistence.Id;
  */
 @Entity
 @SuppressWarnings("PersistenceUnitPresent")
-public class ConfigMarqueCpu implements Serializable {
+public class ConfigTypeMemoire implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(unique = true)
-    private String marqueCpu;
+    private String typeMemoire;
 
-    public ConfigMarqueCpu() {
+    public ConfigTypeMemoire() {
     }
 
-    public ConfigMarqueCpu(String marqueCpu) {
-        this.marqueCpu = marqueCpu;
+    public ConfigTypeMemoire(String typeMemoire) {
+        this.typeMemoire = typeMemoire;
     }
 
-    public String getMarqueCpu() {
-        return marqueCpu;
+    public long getId() {
+        return id;
     }
 
-    public void setMarqueCpu(String marqueCpu) {
-        this.marqueCpu = marqueCpu;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTypeMemoire() {
+        return typeMemoire;
+    }
+
+    public void setTypeMemoire(String typeMemoire) {
+        this.typeMemoire = typeMemoire;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 53 * hash + Objects.hashCode(this.marqueCpu);
+        int hash = 3;
+        hash = 19 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 19 * hash + Objects.hashCode(this.typeMemoire);
         return hash;
     }
 
@@ -73,19 +81,11 @@ public class ConfigMarqueCpu implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ConfigMarqueCpu other = (ConfigMarqueCpu) obj;
+        final ConfigTypeMemoire other = (ConfigTypeMemoire) obj;
         if (this.id != other.id) {
             return false;
         }
-        return Objects.equals(this.marqueCpu, other.marqueCpu);
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+        return Objects.equals(this.typeMemoire, other.typeMemoire);
     }
 
 }

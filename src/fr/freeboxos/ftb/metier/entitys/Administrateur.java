@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@SuppressWarnings("PersistenceUnitPresent")
 public class Administrateur implements Serializable {
 
     @Id
@@ -99,10 +100,7 @@ public class Administrateur implements Serializable {
             return false;
         }
         final Administrateur other = (Administrateur) obj;
-        if (!Objects.equals(this.login, other.login)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.login, other.login);
     }
 
     public static byte[] getSHA(String input) throws NoSuchAlgorithmException {

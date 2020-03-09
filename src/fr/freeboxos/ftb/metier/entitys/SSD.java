@@ -14,6 +14,7 @@ import javax.persistence.Entity;
  */
 @Entity
 @DiscriminatorValue("SSD")
+@SuppressWarnings("PersistenceUnitPresent")
 public class SSD extends HDD {
 
     private String type_memoire;

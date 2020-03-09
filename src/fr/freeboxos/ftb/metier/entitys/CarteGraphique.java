@@ -28,6 +28,7 @@ import javax.persistence.Id;
  * @author alan
  */
 @Entity
+@SuppressWarnings("PersistenceUnitPresent")
 public class CarteGraphique implements Serializable {
 
     @Id
@@ -273,10 +274,7 @@ public class CarteGraphique implements Serializable {
         if (!Objects.equals(this.typeMemoire, other.typeMemoire)) {
             return false;
         }
-        if (!Objects.equals(this.connecteurAlimentation, other.connecteurAlimentation)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.connecteurAlimentation, other.connecteurAlimentation);
     }
 
     @Override

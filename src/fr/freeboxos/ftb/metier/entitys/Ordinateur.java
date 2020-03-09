@@ -29,6 +29,7 @@ import javax.persistence.OneToOne;
  * @author alan
  */
 @Entity
+@SuppressWarnings("PersistenceUnitPresent")
 public class Ordinateur implements Serializable {
 
     @Id
@@ -126,10 +127,7 @@ public class Ordinateur implements Serializable {
         if (!Objects.equals(this.memoire, other.memoire)) {
             return false;
         }
-        if (!Objects.equals(this.hdd, other.hdd)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.hdd, other.hdd);
     }
 
 }

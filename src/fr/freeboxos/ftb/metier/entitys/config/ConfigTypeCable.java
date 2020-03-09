@@ -30,35 +30,43 @@ import javax.persistence.Id;
  */
 @Entity
 @SuppressWarnings("PersistenceUnitPresent")
-public class ConfigMarqueCpu implements Serializable {
+public class ConfigTypeCable implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(unique = true)
-    private String marqueCpu;
+    private String typeCable;
 
-    public ConfigMarqueCpu() {
+    public ConfigTypeCable() {
     }
 
-    public ConfigMarqueCpu(String marqueCpu) {
-        this.marqueCpu = marqueCpu;
+    public ConfigTypeCable(String typeCable) {
+        this.typeCable = typeCable;
     }
 
-    public String getMarqueCpu() {
-        return marqueCpu;
+    public long getId() {
+        return id;
     }
 
-    public void setMarqueCpu(String marqueCpu) {
-        this.marqueCpu = marqueCpu;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTypeCable() {
+        return typeCable;
+    }
+
+    public void setTypeCable(String typeCable) {
+        this.typeCable = typeCable;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 53 * hash + Objects.hashCode(this.marqueCpu);
+        int hash = 3;
+        hash = 89 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 89 * hash + Objects.hashCode(this.typeCable);
         return hash;
     }
 
@@ -73,19 +81,11 @@ public class ConfigMarqueCpu implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ConfigMarqueCpu other = (ConfigMarqueCpu) obj;
+        final ConfigTypeCable other = (ConfigTypeCable) obj;
         if (this.id != other.id) {
             return false;
         }
-        return Objects.equals(this.marqueCpu, other.marqueCpu);
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+        return Objects.equals(this.typeCable, other.typeCable);
     }
 
 }

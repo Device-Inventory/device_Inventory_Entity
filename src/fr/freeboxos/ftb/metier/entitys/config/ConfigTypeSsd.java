@@ -30,35 +30,43 @@ import javax.persistence.Id;
  */
 @Entity
 @SuppressWarnings("PersistenceUnitPresent")
-public class ConfigMarqueCpu implements Serializable {
+public class ConfigTypeSsd implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(unique = true)
-    private String marqueCpu;
+    private String typeSsd;
 
-    public ConfigMarqueCpu() {
+    public ConfigTypeSsd() {
     }
 
-    public ConfigMarqueCpu(String marqueCpu) {
-        this.marqueCpu = marqueCpu;
+    public ConfigTypeSsd(String typeSsd) {
+        this.typeSsd = typeSsd;
     }
 
-    public String getMarqueCpu() {
-        return marqueCpu;
+    public long getId() {
+        return id;
     }
 
-    public void setMarqueCpu(String marqueCpu) {
-        this.marqueCpu = marqueCpu;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTypeSsd() {
+        return typeSsd;
+    }
+
+    public void setTypeSsd(String typeSsd) {
+        this.typeSsd = typeSsd;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 53 * hash + Objects.hashCode(this.marqueCpu);
+        hash = 41 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 41 * hash + Objects.hashCode(this.typeSsd);
         return hash;
     }
 
@@ -73,19 +81,11 @@ public class ConfigMarqueCpu implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ConfigMarqueCpu other = (ConfigMarqueCpu) obj;
+        final ConfigTypeSsd other = (ConfigTypeSsd) obj;
         if (this.id != other.id) {
             return false;
         }
-        return Objects.equals(this.marqueCpu, other.marqueCpu);
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+        return Objects.equals(this.typeSsd, other.typeSsd);
     }
 
 }

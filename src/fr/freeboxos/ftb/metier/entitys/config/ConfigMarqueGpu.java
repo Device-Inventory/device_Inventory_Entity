@@ -30,35 +30,43 @@ import javax.persistence.Id;
  */
 @Entity
 @SuppressWarnings("PersistenceUnitPresent")
-public class ConfigMarqueCpu implements Serializable {
+public class ConfigMarqueGpu implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(unique = true)
-    private String marqueCpu;
+    private String marqueGpu;
 
-    public ConfigMarqueCpu() {
+    public ConfigMarqueGpu() {
     }
 
-    public ConfigMarqueCpu(String marqueCpu) {
-        this.marqueCpu = marqueCpu;
+    public ConfigMarqueGpu(String marqueGpu) {
+        this.marqueGpu = marqueGpu;
     }
 
-    public String getMarqueCpu() {
-        return marqueCpu;
+    public long getId() {
+        return id;
     }
 
-    public void setMarqueCpu(String marqueCpu) {
-        this.marqueCpu = marqueCpu;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getMarqueGpu() {
+        return marqueGpu;
+    }
+
+    public void setMarqueGpu(String marqueGpu) {
+        this.marqueGpu = marqueGpu;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 53 * hash + Objects.hashCode(this.marqueCpu);
+        int hash = 3;
+        hash = 23 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 23 * hash + Objects.hashCode(this.marqueGpu);
         return hash;
     }
 
@@ -73,19 +81,11 @@ public class ConfigMarqueCpu implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ConfigMarqueCpu other = (ConfigMarqueCpu) obj;
+        final ConfigMarqueGpu other = (ConfigMarqueGpu) obj;
         if (this.id != other.id) {
             return false;
         }
-        return Objects.equals(this.marqueCpu, other.marqueCpu);
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+        return Objects.equals(this.marqueGpu, other.marqueGpu);
     }
 
 }

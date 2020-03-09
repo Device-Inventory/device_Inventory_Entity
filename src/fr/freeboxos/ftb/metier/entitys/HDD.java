@@ -25,6 +25,7 @@ import javax.persistence.InheritanceType;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "disc", discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue("HDD")
+@SuppressWarnings("PersistenceUnitPresent")
 public class HDD implements Serializable {
 
     @Id
@@ -181,10 +182,7 @@ public class HDD implements Serializable {
         if (!Objects.equals(this.cache, other.cache)) {
             return false;
         }
-        if (!Objects.equals(this.prix, other.prix)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.prix, other.prix);
     }
 
 }

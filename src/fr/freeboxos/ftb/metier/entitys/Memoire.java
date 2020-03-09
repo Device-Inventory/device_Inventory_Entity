@@ -17,6 +17,7 @@ import javax.persistence.Id;
  * @author alan
  */
 @Entity
+@SuppressWarnings("PersistenceUnitPresent")
 public class Memoire implements Serializable {
 
     @Id
@@ -201,10 +202,7 @@ public class Memoire implements Serializable {
         if (!Objects.equals(this.tension, other.tension)) {
             return false;
         }
-        if (!Objects.equals(this.prix, other.prix)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.prix, other.prix);
     }
 
 }

@@ -16,6 +16,7 @@ import javax.persistence.Id;
  * @author alan
  */
 @Entity
+@SuppressWarnings("PersistenceUnitPresent")
 public class Autre implements Serializable {
 
     @Id

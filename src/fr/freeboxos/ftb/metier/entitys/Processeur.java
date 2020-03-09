@@ -17,6 +17,7 @@ import javax.persistence.Id;
  * @author alan
  */
 @Entity
+@SuppressWarnings("PersistenceUnitPresent")
 public class Processeur implements Serializable {
 
     @Id
@@ -257,10 +258,7 @@ public class Processeur implements Serializable {
         if (!Objects.equals(this.L3, other.L3)) {
             return false;
         }
-        if (!Objects.equals(this.prix, other.prix)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.prix, other.prix);
     }
 
 }

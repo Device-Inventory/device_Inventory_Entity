@@ -20,8 +20,6 @@ import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -30,35 +28,42 @@ import javax.persistence.Id;
  */
 @Entity
 @SuppressWarnings("PersistenceUnitPresent")
-public class ConfigMarqueCpu implements Serializable {
+public class ConfigMarqueChipsetGpu implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(unique = true)
-    private String marqueCpu;
+    private String marqueChipsetGpu;
 
-    public ConfigMarqueCpu() {
+    public ConfigMarqueChipsetGpu() {
     }
 
-    public ConfigMarqueCpu(String marqueCpu) {
-        this.marqueCpu = marqueCpu;
+    public ConfigMarqueChipsetGpu(String marqueChipsetGpu) {
+        this.marqueChipsetGpu = marqueChipsetGpu;
     }
 
-    public String getMarqueCpu() {
-        return marqueCpu;
+    public long getId() {
+        return id;
     }
 
-    public void setMarqueCpu(String marqueCpu) {
-        this.marqueCpu = marqueCpu;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getMarqueChipsetGpu() {
+        return marqueChipsetGpu;
+    }
+
+    public void setMarqueChipsetGpu(String marqueChipsetGpu) {
+        this.marqueChipsetGpu = marqueChipsetGpu;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 53 * hash + Objects.hashCode(this.marqueCpu);
+        hash = 79 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 79 * hash + Objects.hashCode(this.marqueChipsetGpu);
         return hash;
     }
 
@@ -73,19 +78,11 @@ public class ConfigMarqueCpu implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ConfigMarqueCpu other = (ConfigMarqueCpu) obj;
+        final ConfigMarqueChipsetGpu other = (ConfigMarqueChipsetGpu) obj;
         if (this.id != other.id) {
             return false;
         }
-        return Objects.equals(this.marqueCpu, other.marqueCpu);
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+        return Objects.equals(this.marqueChipsetGpu, other.marqueChipsetGpu);
     }
 
 }
