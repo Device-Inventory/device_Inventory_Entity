@@ -12,7 +12,7 @@ import java.util.Comparator;
  *
  * @author alan
  */
-public class ComparatorByIdHDD implements Comparator<HDD> {
+public class ComparatorByIdHdd implements Comparator<HDD> {
 
     @Override
     public int compare(HDD t, HDD t1) {
