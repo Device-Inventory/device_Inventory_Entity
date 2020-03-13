@@ -14,20 +14,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.freeboxos.ftb.metier.sort;
+package fr.freeboxos.ftb.metier.sort.config;
 
-import fr.freeboxos.ftb.metier.entitys.config.ConfigMarqueCpu;
+import fr.freeboxos.ftb.metier.entitys.config.ConfigFormatCarteMere;
 import java.util.Comparator;
 
 /**
  *
  * @author alan
  */
-public class ComparatorByIdConfigMarqueCpu implements Comparator<ConfigMarqueCpu> {
+public class ComparatorByIdConfigFormatCarteMere implements Comparator<ConfigFormatCarteMere> {
 
     @Override
-    public int compare(ConfigMarqueCpu o1, ConfigMarqueCpu o2) {
-        return (int) (o1.getId() - o2.getId());
+    public int compare(ConfigFormatCarteMere t, ConfigFormatCarteMere t1) {
+        return (int) (t.getId() - t1.getId());
     }
 
 }
