@@ -88,4 +88,9 @@ public class ConfigTypeMemoire implements Serializable {
         return Objects.equals(this.typeMemoire, other.typeMemoire);
     }
 
+    @Override
+    public String toString() {
+        return typeMemoire;
+    }
+
 }

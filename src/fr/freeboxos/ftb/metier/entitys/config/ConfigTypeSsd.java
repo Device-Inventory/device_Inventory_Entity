@@ -88,4 +88,9 @@ public class ConfigTypeSsd implements Serializable {
         return Objects.equals(this.typeSsd, other.typeSsd);
     }
 
+    @Override
+    public String toString() {
+        return typeSsd;
+    }
+
 }

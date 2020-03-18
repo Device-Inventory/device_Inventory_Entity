@@ -85,4 +85,9 @@ public class ConfigMarqueChipsetGpu implements Serializable {
         return Objects.equals(this.marqueChipsetGpu, other.marqueChipsetGpu);
     }
 
+    @Override
+    public String toString() {
+        return marqueChipsetGpu;
+    }
+
 }

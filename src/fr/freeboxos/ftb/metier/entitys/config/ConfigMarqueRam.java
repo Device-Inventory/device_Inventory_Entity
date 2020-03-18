@@ -85,4 +85,9 @@ public class ConfigMarqueRam implements Serializable {
         return Objects.equals(this.marqueRam, other.marqueRam);
     }
 
+    @Override
+    public String toString() {
+        return marqueRam;
+    }
+
 }

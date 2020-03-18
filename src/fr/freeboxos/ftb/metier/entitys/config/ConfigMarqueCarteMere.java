@@ -85,4 +85,9 @@ public class ConfigMarqueCarteMere implements Serializable {
         return Objects.equals(this.marqueCarteMere, other.marqueCarteMere);
     }
 
+    @Override
+    public String toString() {
+        return marqueCarteMere;
+    }
+
 }

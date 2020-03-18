@@ -88,4 +88,9 @@ public class ConfigTypeCable implements Serializable {
         return Objects.equals(this.typeCable, other.typeCable);
     }
 
+    @Override
+    public String toString() {
+        return typeCable;
+    }
+
 }

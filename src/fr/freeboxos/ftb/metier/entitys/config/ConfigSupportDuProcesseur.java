@@ -88,4 +88,9 @@ public class ConfigSupportDuProcesseur implements Serializable {
         return Objects.equals(this.supportDuProcesseur, other.supportDuProcesseur);
     }
 
+    @Override
+    public String toString() {
+        return supportDuProcesseur;
+    }
+
 }

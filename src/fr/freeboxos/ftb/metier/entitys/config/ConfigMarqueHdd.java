@@ -88,4 +88,9 @@ public class ConfigMarqueHdd implements Serializable {
         return Objects.equals(this.marqueHdd, other.marqueHdd);
     }
 
+    @Override
+    public String toString() {
+        return marqueHdd;
+    }
+
 }

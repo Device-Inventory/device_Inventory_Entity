@@ -85,4 +85,9 @@ public class ConfigChipsetCpu implements Serializable {
         return Objects.equals(this.chipsetCpu, other.chipsetCpu);
     }
 
+    @Override
+    public String toString() {
+        return chipsetCpu;
+    }
+
 }

@@ -88,4 +88,9 @@ public class ConfigFormatCarteMere implements Serializable {
         return Objects.equals(this.formatCarteMere, other.formatCarteMere);
     }
 
+    @Override
+    public String toString() {
+        return formatCarteMere;
+    }
+
 }
