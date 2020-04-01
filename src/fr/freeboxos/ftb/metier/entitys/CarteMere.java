@@ -41,23 +41,23 @@ public class CarteMere implements Serializable {
     private String modele;
     private String designation; //todo : marque + modele;
 
-    private String supportDuProcesseur; //todo : enum support du processeur
+    private List<String> supportDuProcesseur; //todo : enum support du processeur
     private int nombreDeCpu; // todo : nombre de cpu pouvant etre brancher sur la carte mère
-    private String formatDeCarteMere; //todo : enum format de carte mère
-    private String chipset; //todo : enum chipset
+    private List<String> formatDeCarteMere; //todo : enum format de carte mère
+    private List<String> chipset; //todo : enum chipset
 
-    private String frequenceMemoire; //todo : enum frequence memoire et faire un check list box dans ui
-    private String technologieMemoire; //todo : enum technologieMemoire
+    private List<String> frequenceMemoire; //todo : enum frequence memoire et faire un check list box dans ui
+    private List<String> technologieMemoire; //todo : enum technologieMemoire
     private int capaciteMaximaleRamSlot; //todo : Capacité maximale de RAM par slot
     private int capaciteMaximaleRam; //todo : Capacité maximale de RAM
-    private String typeDeMemoire; //todo : enum type de memoire
+    private List<String> typeDeMemoire; //todo : enum type de memoire
 
     private boolean controleurGraphiqueIntegre;
     private boolean gpuInCpu; // todo : Compatible coeur graphique intégré au CPU
-    private String chipsetGraphique;
+    private List<String> chipsetGraphique;
     private int tailleMemoireVideo;
-    private String typeMultiGpu; //todo : enum type multi gpu
-    private String connecteurGraphique; //todo : enum connecteur graphique
+    private List<String> typeMultiGpu; //todo : enum type multi gpu
+    private List<String> connecteurGraphique; //todo : enum connecteur graphique
 
     private boolean pci;
     private boolean pciExpress1x20; //todo : pci express 2.0
@@ -70,14 +70,14 @@ public class CarteMere implements Serializable {
     private int pciExpress1x30Num;
     private int pciExpress16x30Num;
 
-    private String chipsetAudio;
+    private List<String> chipsetAudio;
     private int nombreCanauxAudio;
 
     private String controleurEthernet;
-    private String normeReseau; //todo : remplir enum norme reseaux;
+    private List<String> normeReseau; //todo : remplir enum norme reseaux;
 
     private boolean raid;
-    private String connecteurDisque; //todo : remplir enum connecteur disque carte mère
+    private List<String> connecteurDisque; //todo : remplir enum connecteur disque carte mère
     private int modeRaid;
 
     private boolean led;
@@ -88,7 +88,7 @@ public class CarteMere implements Serializable {
     }
 
     //todo : finir les attribut
-    public CarteMere(List<String> marque, String modele, String designation, String supportDuProcesseur, int nombreDeCpu, String formatDeCarteMere, String chipset, String frequenceMemoire, String technologieMemoire, int capaciteMaximaleRamSlot, int capaciteMaximaleRam, String typeDeMemoire, boolean controleurGraphiqueIntegre, boolean gpuInCpu, String chipsetGraphique, int tailleMemoireVideo, String typeMultiGpu, String connecteurGraphique, boolean pci, boolean pciExpress1x20, boolean pciExpress16x20, boolean pciExpress1x30, boolean pciExpress16x30, int pciNum, int pciExpress1x20Num, int pciExpress16x20Num, int pciExpress1x30Num, int pciExpress16x30Num, String chipsetAudio, int nombreCanauxAudio, String controleurEthernet, String normeReseau, boolean raid, String connecteurDisque, int modeRaid, boolean led, float prix) {
+    public CarteMere(List<String> marque, String modele, String designation, List<String> supportDuProcesseur, int nombreDeCpu, List<String> formatDeCarteMere, List<String> chipset, List<String> frequenceMemoire, List<String> technologieMemoire, int capaciteMaximaleRamSlot, int capaciteMaximaleRam, List<String> typeDeMemoire, boolean controleurGraphiqueIntegre, boolean gpuInCpu, List<String> chipsetGraphique, int tailleMemoireVideo, List<String> typeMultiGpu, List<String> connecteurGraphique, boolean pci, boolean pciExpress1x20, boolean pciExpress16x20, boolean pciExpress1x30, boolean pciExpress16x30, int pciNum, int pciExpress1x20Num, int pciExpress16x20Num, int pciExpress1x30Num, int pciExpress16x30Num, List<String> chipsetAudio, int nombreCanauxAudio, String controleurEthernet, List<String> normeReseau, boolean raid, List<String> connecteurDisque, int modeRaid, boolean led, float prix) {
         this.marque = marque;
         this.modele = modele;
         this.designation = designation;
@@ -160,14 +160,6 @@ public class CarteMere implements Serializable {
         this.prix = prix;
     }
 
-    public String getSupportDuProcesseur() {
-        return supportDuProcesseur;
-    }
-
-    public void setSupportDuProcesseur(String supportDuProcesseur) {
-        this.supportDuProcesseur = supportDuProcesseur;
-    }
-
     public int getNombreDeCpu() {
         return nombreDeCpu;
     }
@@ -176,44 +168,12 @@ public class CarteMere implements Serializable {
         this.nombreDeCpu = nombreDeCpu;
     }
 
-    public String getFormatDeCarteMere() {
-        return formatDeCarteMere;
-    }
-
-    public void setFormatDeCarteMere(String formatDeCarteMere) {
-        this.formatDeCarteMere = formatDeCarteMere;
-    }
-
-    public String getChipset() {
-        return chipset;
-    }
-
-    public void setChipset(String chipset) {
-        this.chipset = chipset;
-    }
-
     public boolean getLed() {
         return led;
     }
 
     public void setLed(boolean led) {
         this.led = led;
-    }
-
-    public String getFrequenceMemoire() {
-        return frequenceMemoire;
-    }
-
-    public void setFrequenceMemoire(String frequenceMemoire) {
-        this.frequenceMemoire = frequenceMemoire;
-    }
-
-    public String getTechnologieMemoire() {
-        return technologieMemoire;
-    }
-
-    public void setTechnologieMemoire(String technologieMemoire) {
-        this.technologieMemoire = technologieMemoire;
     }
 
     public int getCapaciteMaximaleRamSlot() {
@@ -232,14 +192,6 @@ public class CarteMere implements Serializable {
         this.capaciteMaximaleRam = capaciteMaximaleRam;
     }
 
-    public String getTypeDeMemoire() {
-        return typeDeMemoire;
-    }
-
-    public void setTypeDeMemoire(String typeDeMemoire) {
-        this.typeDeMemoire = typeDeMemoire;
-    }
-
     public boolean getControleurGraphiqueIntegre() {
         return controleurGraphiqueIntegre;
     }
@@ -256,36 +208,12 @@ public class CarteMere implements Serializable {
         this.gpuInCpu = gpuInCpu;
     }
 
-    public String getChipsetGraphique() {
-        return chipsetGraphique;
-    }
-
-    public void setChipsetGraphique(String chipsetGraphique) {
-        this.chipsetGraphique = chipsetGraphique;
-    }
-
     public int getTailleMemoireVideo() {
         return tailleMemoireVideo;
     }
 
     public void setTailleMemoireVideo(int tailleMemoireVideo) {
         this.tailleMemoireVideo = tailleMemoireVideo;
-    }
-
-    public String getTypeMultiGpu() {
-        return typeMultiGpu;
-    }
-
-    public void setTypeMultiGpu(String typeMultiGpu) {
-        this.typeMultiGpu = typeMultiGpu;
-    }
-
-    public String getConnecteurGraphique() {
-        return connecteurGraphique;
-    }
-
-    public void setConnecteurGraphique(String connecteurGraphique) {
-        this.connecteurGraphique = connecteurGraphique;
     }
 
     public boolean getPci() {
@@ -368,14 +296,6 @@ public class CarteMere implements Serializable {
         this.pciExpress16x30Num = pciExpress16x30Num;
     }
 
-    public String getChipsetAudio() {
-        return chipsetAudio;
-    }
-
-    public void setChipsetAudio(String chipsetAudio) {
-        this.chipsetAudio = chipsetAudio;
-    }
-
     public int getNombreCanauxAudio() {
         return nombreCanauxAudio;
     }
@@ -392,28 +312,12 @@ public class CarteMere implements Serializable {
         this.controleurEthernet = controleurEthernet;
     }
 
-    public String getNormeReseau() {
-        return normeReseau;
-    }
-
-    public void setNormeReseau(String normeReseau) {
-        this.normeReseau = normeReseau;
-    }
-
     public boolean getRaid() {
         return raid;
     }
 
     public void setRaid(boolean raid) {
         this.raid = raid;
-    }
-
-    public String getConnecteurDisque() {
-        return connecteurDisque;
-    }
-
-    public void setConnecteurDisque(String connecteurDisque) {
-        this.connecteurDisque = connecteurDisque;
     }
 
     public int getModeRaid() {
@@ -432,47 +336,143 @@ public class CarteMere implements Serializable {
         this.id = id;
     }
 
+    public List<String> getSupportDuProcesseur() {
+        return supportDuProcesseur;
+    }
+
+    public void setSupportDuProcesseur(List<String> supportDuProcesseur) {
+        this.supportDuProcesseur = supportDuProcesseur;
+    }
+
+    public List<String> getFormatDeCarteMere() {
+        return formatDeCarteMere;
+    }
+
+    public void setFormatDeCarteMere(List<String> formatDeCarteMere) {
+        this.formatDeCarteMere = formatDeCarteMere;
+    }
+
+    public List<String> getChipset() {
+        return chipset;
+    }
+
+    public void setChipset(List<String> chipset) {
+        this.chipset = chipset;
+    }
+
+    public List<String> getFrequenceMemoire() {
+        return frequenceMemoire;
+    }
+
+    public void setFrequenceMemoire(List<String> frequenceMemoire) {
+        this.frequenceMemoire = frequenceMemoire;
+    }
+
+    public List<String> getTechnologieMemoire() {
+        return technologieMemoire;
+    }
+
+    public void setTechnologieMemoire(List<String> technologieMemoire) {
+        this.technologieMemoire = technologieMemoire;
+    }
+
+    public List<String> getTypeDeMemoire() {
+        return typeDeMemoire;
+    }
+
+    public void setTypeDeMemoire(List<String> typeDeMemoire) {
+        this.typeDeMemoire = typeDeMemoire;
+    }
+
+    public List<String> getChipsetGraphique() {
+        return chipsetGraphique;
+    }
+
+    public void setChipsetGraphique(List<String> chipsetGraphique) {
+        this.chipsetGraphique = chipsetGraphique;
+    }
+
+    public List<String> getTypeMultiGpu() {
+        return typeMultiGpu;
+    }
+
+    public void setTypeMultiGpu(List<String> typeMultiGpu) {
+        this.typeMultiGpu = typeMultiGpu;
+    }
+
+    public List<String> getConnecteurGraphique() {
+        return connecteurGraphique;
+    }
+
+    public void setConnecteurGraphique(List<String> connecteurGraphique) {
+        this.connecteurGraphique = connecteurGraphique;
+    }
+
+    public List<String> getChipsetAudio() {
+        return chipsetAudio;
+    }
+
+    public void setChipsetAudio(List<String> chipsetAudio) {
+        this.chipsetAudio = chipsetAudio;
+    }
+
+    public List<String> getNormeReseau() {
+        return normeReseau;
+    }
+
+    public void setNormeReseau(List<String> normeReseau) {
+        this.normeReseau = normeReseau;
+    }
+
+    public List<String> getConnecteurDisque() {
+        return connecteurDisque;
+    }
+
+    public void setConnecteurDisque(List<String> connecteurDisque) {
+        this.connecteurDisque = connecteurDisque;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 17 * hash + Objects.hashCode(this.marque);
-        hash = 17 * hash + Objects.hashCode(this.modele);
-        hash = 17 * hash + Objects.hashCode(this.designation);
-        hash = 17 * hash + Objects.hashCode(this.prix);
-        hash = 17 * hash + Objects.hashCode(this.supportDuProcesseur);
-        hash = 17 * hash + Objects.hashCode(this.nombreDeCpu);
-        hash = 17 * hash + Objects.hashCode(this.formatDeCarteMere);
-        hash = 17 * hash + Objects.hashCode(this.chipset);
-        hash = 17 * hash + Objects.hashCode(this.led);
-        hash = 17 * hash + Objects.hashCode(this.frequenceMemoire);
-        hash = 17 * hash + Objects.hashCode(this.technologieMemoire);
-        hash = 17 * hash + Objects.hashCode(this.capaciteMaximaleRamSlot);
-        hash = 17 * hash + Objects.hashCode(this.capaciteMaximaleRam);
-        hash = 17 * hash + Objects.hashCode(this.typeDeMemoire);
-        hash = 17 * hash + Objects.hashCode(this.controleurGraphiqueIntegre);
-        hash = 17 * hash + Objects.hashCode(this.gpuInCpu);
-        hash = 17 * hash + Objects.hashCode(this.chipsetGraphique);
-        hash = 17 * hash + Objects.hashCode(this.tailleMemoireVideo);
-        hash = 17 * hash + Objects.hashCode(this.typeMultiGpu);
-        hash = 17 * hash + Objects.hashCode(this.connecteurGraphique);
-        hash = 17 * hash + Objects.hashCode(this.pci);
-        hash = 17 * hash + Objects.hashCode(this.pciExpress1x20);
-        hash = 17 * hash + Objects.hashCode(this.pciExpress16x20);
-        hash = 17 * hash + Objects.hashCode(this.pciExpress1x30);
-        hash = 17 * hash + Objects.hashCode(this.pciExpress16x30);
-        hash = 17 * hash + Objects.hashCode(this.pciNum);
-        hash = 17 * hash + Objects.hashCode(this.pciExpress1x20Num);
-        hash = 17 * hash + Objects.hashCode(this.pciExpress16x20Num);
-        hash = 17 * hash + Objects.hashCode(this.pciExpress1x30Num);
-        hash = 17 * hash + Objects.hashCode(this.pciExpress16x30Num);
-        hash = 17 * hash + Objects.hashCode(this.chipsetAudio);
-        hash = 17 * hash + Objects.hashCode(this.nombreCanauxAudio);
-        hash = 17 * hash + Objects.hashCode(this.controleurEthernet);
-        hash = 17 * hash + Objects.hashCode(this.normeReseau);
-        hash = 17 * hash + Objects.hashCode(this.raid);
-        hash = 17 * hash + Objects.hashCode(this.connecteurDisque);
-        hash = 17 * hash + Objects.hashCode(this.modeRaid);
-        hash = 17 * hash + Objects.hashCode(this.id);
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.id);
+        hash = 89 * hash + Objects.hashCode(this.marque);
+        hash = 89 * hash + Objects.hashCode(this.modele);
+        hash = 89 * hash + Objects.hashCode(this.designation);
+        hash = 89 * hash + Objects.hashCode(this.supportDuProcesseur);
+        hash = 89 * hash + this.nombreDeCpu;
+        hash = 89 * hash + Objects.hashCode(this.formatDeCarteMere);
+        hash = 89 * hash + Objects.hashCode(this.chipset);
+        hash = 89 * hash + Objects.hashCode(this.frequenceMemoire);
+        hash = 89 * hash + Objects.hashCode(this.technologieMemoire);
+        hash = 89 * hash + this.capaciteMaximaleRamSlot;
+        hash = 89 * hash + this.capaciteMaximaleRam;
+        hash = 89 * hash + Objects.hashCode(this.typeDeMemoire);
+        hash = 89 * hash + (this.controleurGraphiqueIntegre ? 1 : 0);
+        hash = 89 * hash + (this.gpuInCpu ? 1 : 0);
+        hash = 89 * hash + Objects.hashCode(this.chipsetGraphique);
+        hash = 89 * hash + this.tailleMemoireVideo;
+        hash = 89 * hash + Objects.hashCode(this.typeMultiGpu);
+        hash = 89 * hash + Objects.hashCode(this.connecteurGraphique);
+        hash = 89 * hash + (this.pci ? 1 : 0);
+        hash = 89 * hash + (this.pciExpress1x20 ? 1 : 0);
+        hash = 89 * hash + (this.pciExpress16x20 ? 1 : 0);
+        hash = 89 * hash + (this.pciExpress1x30 ? 1 : 0);
+        hash = 89 * hash + (this.pciExpress16x30 ? 1 : 0);
+        hash = 89 * hash + this.pciNum;
+        hash = 89 * hash + this.pciExpress1x20Num;
+        hash = 89 * hash + this.pciExpress16x20Num;
+        hash = 89 * hash + this.pciExpress1x30Num;
+        hash = 89 * hash + this.pciExpress16x30Num;
+        hash = 89 * hash + Objects.hashCode(this.chipsetAudio);
+        hash = 89 * hash + this.nombreCanauxAudio;
+        hash = 89 * hash + Objects.hashCode(this.controleurEthernet);
+        hash = 89 * hash + Objects.hashCode(this.normeReseau);
+        hash = 89 * hash + (this.raid ? 1 : 0);
+        hash = 89 * hash + Objects.hashCode(this.connecteurDisque);
+        hash = 89 * hash + this.modeRaid;
+        hash = 89 * hash + (this.led ? 1 : 0);
+        hash = 89 * hash + Float.floatToIntBits(this.prix);
         return hash;
     }
 
@@ -488,13 +488,82 @@ public class CarteMere implements Serializable {
             return false;
         }
         final CarteMere other = (CarteMere) obj;
-        if (!Objects.equals(this.marque, other.marque)) {
+        if (this.nombreDeCpu != other.nombreDeCpu) {
+            return false;
+        }
+        if (this.capaciteMaximaleRamSlot != other.capaciteMaximaleRamSlot) {
+            return false;
+        }
+        if (this.capaciteMaximaleRam != other.capaciteMaximaleRam) {
+            return false;
+        }
+        if (this.controleurGraphiqueIntegre != other.controleurGraphiqueIntegre) {
+            return false;
+        }
+        if (this.gpuInCpu != other.gpuInCpu) {
+            return false;
+        }
+        if (this.tailleMemoireVideo != other.tailleMemoireVideo) {
+            return false;
+        }
+        if (this.pci != other.pci) {
+            return false;
+        }
+        if (this.pciExpress1x20 != other.pciExpress1x20) {
+            return false;
+        }
+        if (this.pciExpress16x20 != other.pciExpress16x20) {
+            return false;
+        }
+        if (this.pciExpress1x30 != other.pciExpress1x30) {
+            return false;
+        }
+        if (this.pciExpress16x30 != other.pciExpress16x30) {
+            return false;
+        }
+        if (this.pciNum != other.pciNum) {
+            return false;
+        }
+        if (this.pciExpress1x20Num != other.pciExpress1x20Num) {
+            return false;
+        }
+        if (this.pciExpress16x20Num != other.pciExpress16x20Num) {
+            return false;
+        }
+        if (this.pciExpress1x30Num != other.pciExpress1x30Num) {
+            return false;
+        }
+        if (this.pciExpress16x30Num != other.pciExpress16x30Num) {
+            return false;
+        }
+        if (this.nombreCanauxAudio != other.nombreCanauxAudio) {
+            return false;
+        }
+        if (this.raid != other.raid) {
+            return false;
+        }
+        if (this.modeRaid != other.modeRaid) {
+            return false;
+        }
+        if (this.led != other.led) {
+            return false;
+        }
+        if (Float.floatToIntBits(this.prix) != Float.floatToIntBits(other.prix)) {
             return false;
         }
         if (!Objects.equals(this.modele, other.modele)) {
             return false;
         }
         if (!Objects.equals(this.designation, other.designation)) {
+            return false;
+        }
+        if (!Objects.equals(this.controleurEthernet, other.controleurEthernet)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.marque, other.marque)) {
             return false;
         }
         if (!Objects.equals(this.supportDuProcesseur, other.supportDuProcesseur)) {
@@ -527,79 +596,10 @@ public class CarteMere implements Serializable {
         if (!Objects.equals(this.chipsetAudio, other.chipsetAudio)) {
             return false;
         }
-        if (!Objects.equals(this.controleurEthernet, other.controleurEthernet)) {
-            return false;
-        }
         if (!Objects.equals(this.normeReseau, other.normeReseau)) {
             return false;
         }
-        if (!Objects.equals(this.connecteurDisque, other.connecteurDisque)) {
-            return false;
-        }
-        if (!Objects.equals(this.prix, other.prix)) {
-            return false;
-        }
-        if (!Objects.equals(this.nombreDeCpu, other.nombreDeCpu)) {
-            return false;
-        }
-        if (!Objects.equals(this.led, other.led)) {
-            return false;
-        }
-        if (!Objects.equals(this.capaciteMaximaleRamSlot, other.capaciteMaximaleRamSlot)) {
-            return false;
-        }
-        if (!Objects.equals(this.capaciteMaximaleRam, other.capaciteMaximaleRam)) {
-            return false;
-        }
-        if (!Objects.equals(this.controleurGraphiqueIntegre, other.controleurGraphiqueIntegre)) {
-            return false;
-        }
-        if (!Objects.equals(this.gpuInCpu, other.gpuInCpu)) {
-            return false;
-        }
-        if (!Objects.equals(this.tailleMemoireVideo, other.tailleMemoireVideo)) {
-            return false;
-        }
-        if (!Objects.equals(this.pci, other.pci)) {
-            return false;
-        }
-        if (!Objects.equals(this.pciExpress1x20, other.pciExpress1x20)) {
-            return false;
-        }
-        if (!Objects.equals(this.pciExpress16x20, other.pciExpress16x20)) {
-            return false;
-        }
-        if (!Objects.equals(this.pciExpress1x30, other.pciExpress1x30)) {
-            return false;
-        }
-        if (!Objects.equals(this.pciExpress16x30, other.pciExpress16x30)) {
-            return false;
-        }
-        if (!Objects.equals(this.pciNum, other.pciNum)) {
-            return false;
-        }
-        if (!Objects.equals(this.pciExpress1x20Num, other.pciExpress1x20Num)) {
-            return false;
-        }
-        if (!Objects.equals(this.pciExpress16x20Num, other.pciExpress16x20Num)) {
-            return false;
-        }
-        if (!Objects.equals(this.pciExpress1x30Num, other.pciExpress1x30Num)) {
-            return false;
-        }
-        if (!Objects.equals(this.pciExpress16x30Num, other.pciExpress16x30Num)) {
-            return false;
-        }
-        if (!Objects.equals(this.nombreCanauxAudio, other.nombreCanauxAudio)) {
-            return false;
-        }
-        if (!Objects.equals(this.raid, other.raid)) {
-            return false;
-        }
-        if (!Objects.equals(this.modeRaid, other.modeRaid)) {
-            return false;
-        }
-        return Objects.equals(this.id, other.id);
+        return Objects.equals(this.connecteurDisque, other.connecteurDisque);
     }
 
 }
