@@ -78,7 +78,7 @@ public class CarteMere implements Serializable {
 
     private boolean raid;
     private List<String> connecteurDisque; //todo : remplir enum connecteur disque carte mère
-    private int modeRaid;
+    private List<String> modeRaid;
 
     private boolean led;
 
@@ -88,7 +88,7 @@ public class CarteMere implements Serializable {
     }
 
     //todo : finir les attribut
-    public CarteMere(List<String> marque, String modele, String designation, List<String> supportDuProcesseur, int nombreDeCpu, List<String> formatDeCarteMere, List<String> chipset, List<String> frequenceMemoire, List<String> technologieMemoire, int capaciteMaximaleRamSlot, int capaciteMaximaleRam, List<String> typeDeMemoire, boolean controleurGraphiqueIntegre, boolean gpuInCpu, List<String> chipsetGraphique, int tailleMemoireVideo, List<String> typeMultiGpu, List<String> connecteurGraphique, boolean pci, boolean pciExpress1x20, boolean pciExpress16x20, boolean pciExpress1x30, boolean pciExpress16x30, int pciNum, int pciExpress1x20Num, int pciExpress16x20Num, int pciExpress1x30Num, int pciExpress16x30Num, List<String> chipsetAudio, int nombreCanauxAudio, String controleurEthernet, List<String> normeReseau, boolean raid, List<String> connecteurDisque, int modeRaid, boolean led, float prix) {
+    public CarteMere(List<String> marque, String modele, String designation, List<String> supportDuProcesseur, int nombreDeCpu, List<String> formatDeCarteMere, List<String> chipset, List<String> frequenceMemoire, List<String> technologieMemoire, int capaciteMaximaleRamSlot, int capaciteMaximaleRam, List<String> typeDeMemoire, boolean controleurGraphiqueIntegre, boolean gpuInCpu, List<String> chipsetGraphique, int tailleMemoireVideo, List<String> typeMultiGpu, List<String> connecteurGraphique, boolean pci, boolean pciExpress1x20, boolean pciExpress16x20, boolean pciExpress1x30, boolean pciExpress16x30, int pciNum, int pciExpress1x20Num, int pciExpress16x20Num, int pciExpress1x30Num, int pciExpress16x30Num, List<String> chipsetAudio, int nombreCanauxAudio, String controleurEthernet, List<String> normeReseau, boolean raid, List<String> connecteurDisque, List<String> modeRaid, boolean led, float prix) {
         this.marque = marque;
         this.modele = modele;
         this.designation = designation;
@@ -320,11 +320,11 @@ public class CarteMere implements Serializable {
         this.raid = raid;
     }
 
-    public int getModeRaid() {
+    public List<String> getModeRaid() {
         return modeRaid;
     }
 
-    public void setModeRaid(int modeRaid) {
+    public void setModeRaid(List<String> modeRaid) {
         this.modeRaid = modeRaid;
     }
 
@@ -434,45 +434,45 @@ public class CarteMere implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.id);
-        hash = 89 * hash + Objects.hashCode(this.marque);
-        hash = 89 * hash + Objects.hashCode(this.modele);
-        hash = 89 * hash + Objects.hashCode(this.designation);
-        hash = 89 * hash + Objects.hashCode(this.supportDuProcesseur);
-        hash = 89 * hash + this.nombreDeCpu;
-        hash = 89 * hash + Objects.hashCode(this.formatDeCarteMere);
-        hash = 89 * hash + Objects.hashCode(this.chipset);
-        hash = 89 * hash + Objects.hashCode(this.frequenceMemoire);
-        hash = 89 * hash + Objects.hashCode(this.technologieMemoire);
-        hash = 89 * hash + this.capaciteMaximaleRamSlot;
-        hash = 89 * hash + this.capaciteMaximaleRam;
-        hash = 89 * hash + Objects.hashCode(this.typeDeMemoire);
-        hash = 89 * hash + (this.controleurGraphiqueIntegre ? 1 : 0);
-        hash = 89 * hash + (this.gpuInCpu ? 1 : 0);
-        hash = 89 * hash + Objects.hashCode(this.chipsetGraphique);
-        hash = 89 * hash + this.tailleMemoireVideo;
-        hash = 89 * hash + Objects.hashCode(this.typeMultiGpu);
-        hash = 89 * hash + Objects.hashCode(this.connecteurGraphique);
-        hash = 89 * hash + (this.pci ? 1 : 0);
-        hash = 89 * hash + (this.pciExpress1x20 ? 1 : 0);
-        hash = 89 * hash + (this.pciExpress16x20 ? 1 : 0);
-        hash = 89 * hash + (this.pciExpress1x30 ? 1 : 0);
-        hash = 89 * hash + (this.pciExpress16x30 ? 1 : 0);
-        hash = 89 * hash + this.pciNum;
-        hash = 89 * hash + this.pciExpress1x20Num;
-        hash = 89 * hash + this.pciExpress16x20Num;
-        hash = 89 * hash + this.pciExpress1x30Num;
-        hash = 89 * hash + this.pciExpress16x30Num;
-        hash = 89 * hash + Objects.hashCode(this.chipsetAudio);
-        hash = 89 * hash + this.nombreCanauxAudio;
-        hash = 89 * hash + Objects.hashCode(this.controleurEthernet);
-        hash = 89 * hash + Objects.hashCode(this.normeReseau);
-        hash = 89 * hash + (this.raid ? 1 : 0);
-        hash = 89 * hash + Objects.hashCode(this.connecteurDisque);
-        hash = 89 * hash + this.modeRaid;
-        hash = 89 * hash + (this.led ? 1 : 0);
-        hash = 89 * hash + Float.floatToIntBits(this.prix);
+        int hash = 3;
+        hash = 71 * hash + Objects.hashCode(this.id);
+        hash = 71 * hash + Objects.hashCode(this.marque);
+        hash = 71 * hash + Objects.hashCode(this.modele);
+        hash = 71 * hash + Objects.hashCode(this.designation);
+        hash = 71 * hash + Objects.hashCode(this.supportDuProcesseur);
+        hash = 71 * hash + this.nombreDeCpu;
+        hash = 71 * hash + Objects.hashCode(this.formatDeCarteMere);
+        hash = 71 * hash + Objects.hashCode(this.chipset);
+        hash = 71 * hash + Objects.hashCode(this.frequenceMemoire);
+        hash = 71 * hash + Objects.hashCode(this.technologieMemoire);
+        hash = 71 * hash + this.capaciteMaximaleRamSlot;
+        hash = 71 * hash + this.capaciteMaximaleRam;
+        hash = 71 * hash + Objects.hashCode(this.typeDeMemoire);
+        hash = 71 * hash + (this.controleurGraphiqueIntegre ? 1 : 0);
+        hash = 71 * hash + (this.gpuInCpu ? 1 : 0);
+        hash = 71 * hash + Objects.hashCode(this.chipsetGraphique);
+        hash = 71 * hash + this.tailleMemoireVideo;
+        hash = 71 * hash + Objects.hashCode(this.typeMultiGpu);
+        hash = 71 * hash + Objects.hashCode(this.connecteurGraphique);
+        hash = 71 * hash + (this.pci ? 1 : 0);
+        hash = 71 * hash + (this.pciExpress1x20 ? 1 : 0);
+        hash = 71 * hash + (this.pciExpress16x20 ? 1 : 0);
+        hash = 71 * hash + (this.pciExpress1x30 ? 1 : 0);
+        hash = 71 * hash + (this.pciExpress16x30 ? 1 : 0);
+        hash = 71 * hash + this.pciNum;
+        hash = 71 * hash + this.pciExpress1x20Num;
+        hash = 71 * hash + this.pciExpress16x20Num;
+        hash = 71 * hash + this.pciExpress1x30Num;
+        hash = 71 * hash + this.pciExpress16x30Num;
+        hash = 71 * hash + Objects.hashCode(this.chipsetAudio);
+        hash = 71 * hash + this.nombreCanauxAudio;
+        hash = 71 * hash + Objects.hashCode(this.controleurEthernet);
+        hash = 71 * hash + Objects.hashCode(this.normeReseau);
+        hash = 71 * hash + (this.raid ? 1 : 0);
+        hash = 71 * hash + Objects.hashCode(this.connecteurDisque);
+        hash = 71 * hash + Objects.hashCode(this.modeRaid);
+        hash = 71 * hash + (this.led ? 1 : 0);
+        hash = 71 * hash + Float.floatToIntBits(this.prix);
         return hash;
     }
 
@@ -542,9 +542,6 @@ public class CarteMere implements Serializable {
         if (this.raid != other.raid) {
             return false;
         }
-        if (this.modeRaid != other.modeRaid) {
-            return false;
-        }
         if (this.led != other.led) {
             return false;
         }
@@ -599,7 +596,10 @@ public class CarteMere implements Serializable {
         if (!Objects.equals(this.normeReseau, other.normeReseau)) {
             return false;
         }
-        return Objects.equals(this.connecteurDisque, other.connecteurDisque);
+        if (!Objects.equals(this.connecteurDisque, other.connecteurDisque)) {
+            return false;
+        }
+        return Objects.equals(this.modeRaid, other.modeRaid);
     }
 
 }
