@@ -38,12 +38,12 @@ public class HDD implements Serializable {
     private String capacite;
     private String vitesse_de_rotation;
     private String cache;
-    private String prix; //todo : modifier le type d'attribut
+    private float prix; //todo : modifier le type d'attribut
 
     public HDD() {
     }
 
-    public HDD(String marque, String modele, String interface_ordinateur, String format, String capacite, String vitesse_de_rotation, String cache, String prix) {
+    public HDD(String marque, String modele, String interface_ordinateur, String format, String capacite, String vitesse_de_rotation, String cache, float prix) {
         this.marque = marque;
         this.modele = modele;
         this.interface_ordinateur = interface_ordinateur;
@@ -118,11 +118,11 @@ public class HDD implements Serializable {
         this.cache = cache;
     }
 
-    public String getPrix() {
+    public float getPrix() {
         return prix;
     }
 
-    public void setPrix(String prix) {
+    public void setPrix(float prix) {
         this.prix = prix;
     }
 

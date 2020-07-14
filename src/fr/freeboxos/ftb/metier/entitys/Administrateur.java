@@ -40,7 +40,7 @@ public class Administrateur implements Serializable {
     }
 
     public boolean isValid(String mdp) throws NoSuchAlgorithmException {
-        return this.mdp.equals(toHexString(mdp.getBytes()));
+        return this.mdp.equals(toHexString(getSHA(mdp)));
     }
 
     /**
@@ -69,7 +69,7 @@ public class Administrateur implements Serializable {
      * @throws java.security.NoSuchAlgorithmException
      */
     public void setMdp(String mdp) throws NoSuchAlgorithmException {
-        this.mdp = toHexString(mdp.getBytes());
+        this.mdp = toHexString(getSHA(mdp));
     }
 
     public void setEncodedMdp(String mdp) throws NoSuchAlgorithmException {

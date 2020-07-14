@@ -39,7 +39,7 @@ public class SSD extends HDD {
         this.trim = trim;
     }
 
-    public SSD(String type_memoire, boolean nvme, String controleur, String lecture, String ecriture, long iops, boolean trim, String marque, String modele, String interface_ordinateur, String format, String capacite, String vitesse_de_rotation, String cache, String prix) {
+    public SSD(String type_memoire, boolean nvme, String controleur, String lecture, String ecriture, long iops, boolean trim, String marque, String modele, String interface_ordinateur, String format, String capacite, String vitesse_de_rotation, String cache, float prix) {
         super(marque, modele, interface_ordinateur, format, capacite, vitesse_de_rotation, cache, prix);
         this.type_memoire = type_memoire;
         this.nvme = nvme;
